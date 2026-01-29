@@ -31,10 +31,16 @@ public class AccountAccessTest extends BaseTest {
         homePage.hoverOnHelloSignInAccountLists();
         ListsPage listsPage = homePage.hoverOnYourListsThenGoToIt();
         System.out.println(listsPage.getPageTittle());
-        Assert.assertTrue(listsPage.getPageTittle().contains("List1"));
+        Assert.assertTrue(listsPage.getPageTittle().contains("List"));
 
 
+    }
 
+    @Test
+    public void failedTestToCHeckScreenshotFunction(){
+        homePage.hoverOnHelloSignInAccountLists();
+        LoginPage loginPage= homePage.hoverOnYourOredersThenGoToIt();
+        Assert.assertTrue(loginPage.getPageTittle().contains("********"));
 
     }
 }

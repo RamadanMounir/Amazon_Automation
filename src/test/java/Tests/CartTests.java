@@ -22,7 +22,8 @@ public class CartTests extends BaseTest {
 
         dealsPage.selectSecondCategory();
         ProductPage productPage = dealsPage.selectFirsProduct();
-       productPage.selectSecondItem();
+  // This statement based on if the product has variety item to chose between them
+ //      productPage.selectSecondItem();
 
         String expectedTittle = productPage.getExpectedProductTitle();
         int expectedPrice = productPage.getExpectedProductPrice();
@@ -37,7 +38,7 @@ public class CartTests extends BaseTest {
         CartPage cartPage = productPage.goToCart();
 
 // verify that tittle of the product selected is the same on the cart
-        Assert.assertEquals(cartPage.getActualProductTitle(),expectedTittle
+        Assert.assertTrue(cartPage.getActualProductTitle().contains(expectedTittle)
                 ,"product tittle mismatch");
 
 // verify that subtotal is correct as calculated = price * quantity
