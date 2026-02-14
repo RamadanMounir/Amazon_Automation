@@ -43,7 +43,8 @@ private Actions actions;
         waitNavBarToLoad();
         List<WebElement> NavLinks = driver.findElements(navLists);
        List<WebElement> targetLink = NavLinks.stream().
-               filter(link->link.getText().contains("Today's Deals")).collect(Collectors.toList());
+               filter(link->link.getText().contains("Today's Deals")||
+                       link.getText().contains("Ramadan Deals")).collect(Collectors.toList());
 
        if(targetLink.size()>0) {
            wait.until(ExpectedConditions.elementToBeClickable(targetLink.getFirst())).click();

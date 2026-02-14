@@ -18,12 +18,12 @@ public class CartTests extends BaseTest {
         String tittle = dealsPage.getPageTittle();
         System.out.println("Page Tittle: "+tittle);
 
-        Assert.assertTrue(tittle.contains("Today's Deals"));
+        Assert.assertTrue(tittle.contains("Today's Deals")||tittle.contains("Amazon Ramadan Sale"));
 
         dealsPage.selectSecondCategory();
         ProductPage productPage = dealsPage.selectFirsProduct();
   // This statement based on if the product has variety item to chose between them
- //      productPage.selectSecondItem();
+       productPage.selectSecondItem();
 
         String expectedTittle = productPage.getExpectedProductTitle();
         int expectedPrice = productPage.getExpectedProductPrice();

@@ -38,7 +38,7 @@ public class DealsPage {
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", departments.get(1));
 
-       departments.get(1).click();
+       departments.get(2).click();
     }
     public ProductPage selectFirsProduct(){
         waitNavBarToLoad();
